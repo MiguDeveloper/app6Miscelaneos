@@ -1,0 +1,31 @@
+<div [ngClass]="valorClase" class="alert alert-primary" role="alert">
+  A simple {{valorClase}} alert—check it out!
+</div>
+
+<p [ngClass]="{'text-danger' : propiedades.danger, 'text-info' : !propiedades.danger}">mensaje</p>
+
+<button type="button" (click)="propiedades.danger = !propiedades.danger"
+        [ngClass]="{'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger}"
+        class="btn btn-primary">Cambia propiedad
+</button>
+
+<br><br>
+
+<button type="button" class="btn btn-outline-primary" (click)="valorClase = 'alert-primary'">Primary</button>
+<button type="button" class="btn btn-outline-secondary" (click)="valorClase = 'alert-secondary'">Secondary</button>
+<button type="button" class="btn btn-outline-success" (click)="valorClase = 'alert-success'">Success</button>
+<button type="button" class="btn btn-outline-danger" (click)="valorClase = 'alert-danger'">Danger</button>
+<button type="button" class="btn btn-outline-warning" (click)="valorClase = 'alert-warning'">Warning</button>
+<button type="button" class="btn btn-outline-info" (click)="valorClase = 'alert-info'">Info</button>
+
+<br><br>
+
+<button type="button" class="btn btn-primary" (click)="ejecutar()" [disabled]="loading"><i
+  [ngClass]="{'fa-save':!loading, ' fa-sync fa-spin': loading}" class="fa"></i>
+  <span *ngIf="!loading"> Guardar cambios</span>
+  <span *ngIf="loading"> Guardando</span>
+</button>
+
+<hr>
+
+<p [appResaltado]="'orange'">Resultado directiva a medida</p>
