@@ -21,7 +21,8 @@ const APP_ROUTES: Routes = [
     children: [
       {path: 'nuevo', component: UsuarioNuevoComponent},
       {path: 'editar', component: UsuarioEditarComponent},
-      {path: 'detalle', component: UsuarioDetalleComponent}
+      {path: 'detalle', component: UsuarioDetalleComponent},
+      {path: '**', pathMatch: 'full', redirectTo: 'nuevo'}
     ]
   },
   {path: 'ngswitch', component: NgswitchComponent},
